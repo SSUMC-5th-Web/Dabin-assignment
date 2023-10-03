@@ -1,0 +1,24 @@
+body {
+  font-family: sans-serif;
+}
+.modal-wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-wrapper .modal {
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 15px;
+  width: 300px;
+}
+.modal-wrapper .close-wrapper {
+  text-align: right;
+}
