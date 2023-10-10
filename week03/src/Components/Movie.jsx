@@ -16,15 +16,15 @@ function Movie({ poster_path, title, vote_average, overview }) {
   // 포스터 img에 마우스를 올리면 영화 상세 설명(title, overviw) 보이게
   return (
     <div>
-      <div className="movie-container">
-        <img src={poster_path} alt="영화포스터" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
+      <div className="movie-container" onMouseEnter={handleMouseEnter}>
+        <img src={poster_path} alt="영화포스터" />
         <div className="movie-info">
           <h4>{title}</h4>
           <span>{vote_average}</span>
         </div>
 
         {showOverview && (
-          <div className="movie-detail">
+          <div className="movie-detail" onMouseLeave={handleMouseLeave}>
             <h4>{title}</h4>
             <span>{overview}</span>
           </div>
