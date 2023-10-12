@@ -1,0 +1,50 @@
+body {
+  background-color: #22254b;
+  font-family: sans-serif;
+}
+.app-container {
+  display: flex;
+  flex-wrap: wrap; /*화면 너비에 맞춰서 조정됨*/
+  justify-content: center;
+}
+
+/* 영화 정보 컴포넌트 */
+.movie-container {
+  position: relative;
+  width: 250px;
+  height: 445px; /*img 375px과 movie-info 70px의*/
+  margin: 16px;
+  background-color: #373b69;
+  color: white;
+  display: flex;
+  flex-direction: column; /*img와 movie-info가 세로로 쌓이도록 함*/
+}
+.movie-container img {
+  max-width: 100%;
+  height: 375px;
+}
+.movie-info {
+  height: 70px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between; /*title과 vote_average가 가로로 정렬됨*/
+  align-items: center;
+}
+.movie-info h4 {
+  margin: 0;
+}
+.movie-info span {
+  margin-left: 5px;
+}
+
+/*상세 컴포넌트*/
+.movie-detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 32px); /*상위 요소인 movie-container에서 margin값 16px 빼기*/
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  overflow: auto; /* 컨텐츠가 더 길 경우 스크롤 추가 */
+}
