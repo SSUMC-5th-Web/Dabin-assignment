@@ -1,7 +1,12 @@
-import React from "react";
+import React from 'react';
+import AdPage from './AdPage.jsx';
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <AdPage />
+    </div>
+  );
 }
 
 export default Home;
