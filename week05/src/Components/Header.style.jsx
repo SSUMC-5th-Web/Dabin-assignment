@@ -12,6 +12,7 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   padding-left: 100px;
+  gap: 20px;
 
   ul {
     list-style: none;
@@ -21,9 +22,6 @@ export const Nav = styled.nav`
     align-items: center;
     font-size: 14px;
 
-    li {
-      margin: 0 15px;
-    }
     a {
       text-decoration: none;
       color: #fff;

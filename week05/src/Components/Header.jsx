@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HeaderContainer, Nav } from './Header.style.jsx';
+import LoginControl from './LoginControl.jsx';
 
 function Header() {
   return (
@@ -28,6 +29,7 @@ function Header() {
             <Link to="/celebrity">인물</Link>
           </li>
         </ul>
+        <LoginControl />
       </Nav>
     </HeaderContainer>
   );
