@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const movieContainer = styled.div`
   position: relative;
@@ -10,7 +10,7 @@ export const movieContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export const movieImg = styled.div`
+export const movieImg = styled.img`
   max-width: 100%;
   height: 375px;
 `;
