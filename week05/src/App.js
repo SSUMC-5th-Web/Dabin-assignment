@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Celebrity from './Components/Celebrity.jsx';
-import Home from './Components/Home.jsx';
-import Movies from './Components/Movies.jsx';
-import NotFound from './Components/NotFound.jsx';
-import TV from './Components/TV.jsx';
+import Celebrity from './Pages/Celebrity.jsx';
+import Home from './Pages/Home.jsx';
+import Movies from './Pages/Movies.jsx';
+import NotFound from './Pages/NotFound.jsx';
+import TV from './Pages/TV.jsx';
 import Header from './Components/Header.jsx';
+import movies from './movieDummy';
 
 function App() {
   return (
@@ -13,10 +14,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Celebrity" element={<Celebrity />} />
-          <Route path="/Movies" element={<Movies />} />
-          <Route path="/NotFound" element={<NotFound />} />
-          <Route path="/TV" element={<TV />} />
+          <Route path="/celebrity" element={<Celebrity />} />
+          <Route path="/movies" element={<Movies movies={movies.results} />} />
+          <Route path="/tv" element={<TV />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

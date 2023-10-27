@@ -1,5 +1,5 @@
 import React from 'react';
-import AdPage from './AdPage.jsx';
+import AdPage from '../Components/AdPage.jsx';
 
 function Home() {
   return (
