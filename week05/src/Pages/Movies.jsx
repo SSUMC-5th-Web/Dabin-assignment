@@ -14,48 +14,35 @@ export const AppContainer = styled.div`
   justify-content: center;
 `;
 
-function Movies({ movies }) {
-  // 각 영화 정보에 대한 상태 배열 초기화
-  const [showOverviewArray, setShowOverviewArray] = useState(new Array(movies.length).fill(false));
+function Movies({ posterPath, title, voteAverage, overview }) {
+  const [detail, setDetail] = useState(false);
 
-  const handleMouseEnter = index => {
-    // 해당 영화 정보에 대한 마우스 오버 상태를 활성화
-    const newShowOverviewArray = [...showOverviewArray];
-    newShowOverviewArray[index] = true;
-    setShowOverviewArray(newShowOverviewArray);
+  const showDetail = () => {
+    setDetail(true);
   };
-
-  const handleMouseLeave = index => {
-    // 해당 영화 정보에 대한 마우스 오버 상태를 비활성화
-    const newShowOverviewArray = [...showOverviewArray];
-    newShowOverviewArray[index] = false;
-    setShowOverviewArray(newShowOverviewArray);
+  const hideDetail = () => {
+    setDetail(false);
   };
 
   return (
     <div>
       <GlobalStyle />
       <AppContainer>
-        {movies.map((movie, index) => (
-          <A.movieContainer
-            key={index}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(index)}>
-            <A.movieImg src={movie.poster_path} alt={movie.title} />
+        <A.movieContainer onMouseEnter={showDetail} onMouseLeave={hideDetail}>
+          <A.movieImg src={posterPath} alt={title} />
 
-            <A.movieInfo>
-              <h4 style={{ margin: '0' }}>{movie.title}</h4>
-              <span style={{ marginLeft: '5px' }}>{movie.vote_average}</span>
-            </A.movieInfo>
+          <A.movieInfo>
+            <h4 style={{ margin: '0' }}>{title}</h4>
+            <span style={{ marginLeft: '5px' }}>{voteAverage}</span>
+          </A.movieInfo>
 
-            {showOverviewArray[index] && (
-              <A.movieDetail>
-                <h4>{movie.title}</h4>
-                <span>{movie.overview}</span>
-              </A.movieDetail>
-            )}
-          </A.movieContainer>
-        ))}
+          {detail && (
+            <A.movieDetail>
+              <h4>{title}</h4>
+              <span>{overview}</span>
+            </A.movieDetail>
+          )}
+        </A.movieContainer>
       </AppContainer>
     </div>
   );
