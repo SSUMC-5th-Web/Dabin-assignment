@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Celebrity from './Pages/Celebrity.jsx';
 import Home from './Pages/Home.jsx';
 import Movies from './Pages/Movies.jsx';
+import MovieDetail from './Pages/MovieDetail.jsx';
 import NotFound from './Pages/NotFound.jsx';
 import TV from './Pages/TV.jsx';
 import Header from './Components/Header.jsx';
@@ -15,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/celebrity" element={<Celebrity />} />
-          <Route
+          {/* <Route
             path="/movies"
             element={movies.results.map(item => (
               <Movies
@@ -25,7 +26,9 @@ function App() {
                 overview={item.overview}
               />
             ))}
-          />
+          /> */}
+          <Route path="/movies" element={<Movies movies={movies.results} />} />
+          <Route path="/movie/:title" element={<MovieDetail />} />
           <Route path="/tv" element={<TV />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
