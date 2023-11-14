@@ -31,8 +31,8 @@ function MovieItem({ item }) {
   };
 
   return (
-    <A.movieContainer>
-      <A.movieImg src={item.poster_path} alt={item.title} onClick={onClickImg} />
+    <A.movieContainer onClick={onClickImg}>
+      <A.movieImg src={item.poster_path} alt={item.title} />
       <A.movieInfo>
         <h4 style={{ margin: '0' }}>{item.title}</h4>
         <span style={{ marginLeft: '5px' }}>{item.vote_average}</span>
