@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import * as A from './Movies.style.jsx';
@@ -19,15 +18,7 @@ export const AppContainer = styled.div`
 
 function MovieItem({ item }) {
   // 각 영화 항목을 관리하는 컴포넌트
-  const [detail, setDetail] = useState(false);
   const navigate = useNavigate();
-
-  const showDetail = () => {
-    setDetail(true);
-  };
-  const hideDetail = () => {
-    setDetail(false);
-  };
   const onClickImg = () => {
     navigate(`/movie/${item.title}`, {
       state: {
@@ -40,20 +31,12 @@ function MovieItem({ item }) {
   };
 
   return (
-    <A.movieContainer onMouseEnter={showDetail} onMouseLeave={hideDetail}>
+    <A.movieContainer>
       <A.movieImg src={item.poster_path} alt={item.title} onClick={onClickImg} />
-
       <A.movieInfo>
         <h4 style={{ margin: '0' }}>{item.title}</h4>
         <span style={{ marginLeft: '5px' }}>{item.vote_average}</span>
       </A.movieInfo>
-
-      {detail && (
-        <A.movieDetail>
-          <h4>{item.title}</h4>
-          <span>{item.overview}</span>
-        </A.movieDetail>
-      )}
     </A.movieContainer>
   );
 }

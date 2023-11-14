@@ -16,17 +16,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/celebrity" element={<Celebrity />} />
-          {/* <Route
-            path="/movies"
-            element={movies.results.map(item => (
-              <Movies
-                posterPath={item.poster_path}
-                title={item.title}
-                voteAverage={item.vote_average}
-                overview={item.overview}
-              />
-            ))}
-          /> */}
           <Route path="/movies" element={<Movies movies={movies.results} />} />
           <Route path="/movie/:title" element={<MovieDetail />} />
           <Route path="/tv" element={<TV />} />
