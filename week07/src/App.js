@@ -7,6 +7,7 @@ import Movies from './Pages/Movies.jsx';
 import movies from './movieDummy';
 import MovieDetail from './Pages/MovieDetail.jsx';
 import TV from './Pages/TV.jsx';
+import tvs from './tvDummy.js';
 import NotFound from './Pages/NotFound.jsx';
 import Login from './Pages/Login.jsx';
 
@@ -29,7 +30,7 @@ function App() {
           <Route path="/celebrity" element={<Celebrity />} />
           <Route path="/movies" element={<Movies movies={movies.results} />} />
           <Route path="/movie/:title" element={<MovieDetail />} />
-          <Route path="/tv" element={<TV />} />
+          <Route path="/tv" element={<TV tvs={tvs.results} />} />
           <Route path="/*" element={<NotFound />} />
           <Route path="/login" element={<Login onLogin={handleLoginClick} />} />
         </Routes>

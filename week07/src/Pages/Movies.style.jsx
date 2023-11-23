@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const movieContainer = styled.div`
   position: relative;
-  width: 250px;
-  height: 445px;
+  width: 200px;
+  height: auto;
   margin: 16px;
   background-color: #373b69;
   color: white;
@@ -12,7 +12,7 @@ export const movieContainer = styled.div`
 `;
 export const movieImg = styled.img`
   max-width: 100%;
-  height: 375px;
+  height: auto;
 `;
 export const movieInfo = styled.div`
   height: 70px;

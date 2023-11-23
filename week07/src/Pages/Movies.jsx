@@ -14,6 +14,7 @@ export const AppContainer = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: 0 100px;
+  width: 100%;
 `;
 
 function MovieItem({ item }) {
