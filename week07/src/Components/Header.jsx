@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { HeaderContainer, Nav } from './Header.style.jsx';
 import LoginControl from './LoginControl.jsx';
 
-function Header() {
+function Header({ isLoggedIn, onLogin, onLogout }) {
   return (
     <HeaderContainer>
       <Nav>
@@ -29,7 +29,7 @@ function Header() {
             <Link to="/celebrity">인물</Link>
           </li>
         </ul>
-        <LoginControl />
+        <LoginControl isLoggedIn={isLoggedIn} onLogin={onLogin} onLogout={onLogout} />
       </Nav>
     </HeaderContainer>
   );

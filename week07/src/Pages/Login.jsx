@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, FormContainer, Title, Label, Input, WarningMessage, Button } from './Login.style';
 
-function Login() {
+function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -41,6 +41,7 @@ function Login() {
     } else if (!/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password)) {
       setPasswordError('영문, 숫자, 특수문자를 포함하여 8자 이상 입력해주세요.');
     } else {
+      onLogin();
       navigate('/');
     }
   };
@@ -68,7 +69,7 @@ function Login() {
           />
           {passwordError && <WarningMessage>{passwordError}</WarningMessage>}
         </Label>
-        <Button type="submit" disabled={!email.includes('@') || password.length < 8}>
+        <Button type="submit" disabled={emailError || passwordError}>
           확인
         </Button>
       </FormContainer>

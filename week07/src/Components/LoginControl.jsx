@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LoginContainer, Button, P } from './LoginControl.style.jsx';
 
-function LoginControl() {
+function LoginControl({ isLoggedIn, onLogin, onLogout }) {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLoginClick = () => {
-    setIsLoggedIn(true);
     navigate('/login');
   };
+
   const handleLogoutClick = () => {
-    setIsLoggedIn(false);
+    onLogout();
+    navigate('/');
   };
 
   return (
