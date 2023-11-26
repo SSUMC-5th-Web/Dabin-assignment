@@ -39,8 +39,25 @@ function Login() {
       <Input type="text" placeholder="아이디" value={id} onChange={(e) => setId(e.target.value)} />
       <Input type="password" placeholder="비밀번호" value={password} onChange={(e) => setPassword(e.target.value)} />
       <Button onClick={handleLogin} disabled={loading}>
-        {loading ? "Loading..." : "로그인"}
+        로그인
       </Button>
+      {loading && (
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0,0,0,0.5)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <p style={{ color: "white" }}>Loading...</p>
+        </div>
+      )}
     </Container>
   );
 }
