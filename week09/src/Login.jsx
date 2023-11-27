@@ -18,9 +18,13 @@ function Login() {
     axios
       .post("/user/login", { id, pw: password })
       .then((response) => {
-        const data = response.data.result;
-        console.log(response.data.message);
-        console.log(`userId: ${data.userId}, username: ${data.username}`);
+        const { message, result } = response.data;
+        const { AccessToken, userId, username } = result;
+        console.log(`${message}, userId: ${userId}, username: ${username}`);
+
+        // 로그인 성공 시 토큰과 id를 로컬스토리지에 저장
+        localStorage.setItem("token", AccessToken);
+        localStorage.setItem("id", userId);
       })
       .catch((error) => {
         // 404 Error : 아이디 에러
